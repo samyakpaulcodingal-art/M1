@@ -1,0 +1,33 @@
+print("--- Armstrong Number Checker ---")
+print()
+
+# Step 1: User-er kachhe theke number input newa
+user_input = input("Enter a positive number: ")
+
+# Number-tite kota digit ache sheta ber kora (e.g., "153" mane 3ti digit)
+num_digits = len(user_input)
+
+# Input-ke integer (shonkhya)-te convert kora loop-er suvidhar jonno
+number = int(user_input)
+
+# Main number-ti ke ekta alada variable-e bachiye rakha porer sathe milanor jonno
+original_number = number
+sum_of_powers = 0
+
+# Step 2: While loop diye protita digit alada kora ar power jog kora
+while number > 0:
+    # Shonkhyar shesh digit-ti ber kora (Modulus (%) use kore)
+    digit = number % 10
+    
+    # Shei digit-ke num_digits er power kore sum-er sathe jog kora
+    sum_of_powers += digit ** num_digits
+    
+    # Shesh digit-ti ke shonkhya theke bad dewa (Floor division (//) use kore)
+    number = number // 10
+
+# Step 3: Conditional statement (if-else) diye check kora logic milono holo kina
+print()
+if sum_of_powers == original_number:
+    print(f" Yes! {original_number} is an Armstrong number!")
+else:
+    print(f" No, {original_number} is NOT an Armstrong number.")
