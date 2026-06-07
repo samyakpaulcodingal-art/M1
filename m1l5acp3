@@ -1,0 +1,25 @@
+print("--- Fibonacci Series using Recursion ---")
+print()
+
+# Step 1: Recursion function toiri kora
+def fibonacci_recursive(n):
+    # Base Case: n er man jodi 0 ba 1 hoy, tokhon shei manটাই fered jabe
+    if n <= 1:
+        return n
+    else:
+        # Recursion Step: Ager duto shonkhyar jonno abar function-ke call kore jog kora
+        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
+
+# Step 2: User-er kachhe theke kota term chai sheta input newa
+terms = int(input("How many terms of Fibonacci series do you want? "))
+
+# Step 3: Validation ebong Loop diye function-ti ke call kora
+if terms <= 0:
+    print("Please enter a positive number greater than 0.")
+else:
+    print(f"\nThe Fibonacci series up to {terms} terms is:")
+    
+    # loop chaliye proti'ti step-er Fibonacci number print kora
+    for i in range(terms):
+        print(fibonacci_recursive(i), end=" ")
+    print() # line break-er jonno
