@@ -1,0 +1,52 @@
+# Step 1: Datetime module import kora (Ajker date ar shomoy dekhator jonno)
+import datetime
+
+print("--- Welcome to My Daily Mood Advisor ---")
+print()
+
+# Step 2: User-er kachhe theke information collect kora
+name = input("Enter your name: ")
+mood = input("How is your mood today? (happy / sad / tired / angry): ").lower()
+energy_level = input("Is your energy level high or low? (high / low): ").lower()
+
+print("\n----------------------------------------")
+print(f"Generating Mood Report for {name}...")
+print("----------------------------------------")
+
+# Step 3: Conditional Statements (if-elif-else) diye advice toiri kora
+# Protita mood ar energy level check kore alada advice dewa hocche
+if mood == "happy":
+    if energy_level == "high":
+        advice = "That's amazing! Go out, play, or start a creative project today! 🌟"
+    else:  # energy_level low hole
+        advice = "Great! It's a perfect time to relax, read a book, or listen to calm music. 📚"
+
+elif mood == "sad":
+    if energy_level == "high":
+        advice = "It's okay to feel sad. Maybe a quick walk or talking to a friend will make you feel better. 🚶‍♂️"
+    else:
+        advice = "Take a warm blanket, rest well, and watch your favorite cartoon or movie. ☕"
+
+elif mood == "tired":
+    advice = "Your body needs rest. Grab a healthy snack and take a nice, peaceful nap! 😴"
+
+elif mood == "angry":
+    advice = "Take deep breaths. Counting 1 to 10 or drawing something can help you calm down. 🧘‍♂️"
+
+else:
+    # Keu jodi list-er baire onno kichu likhe (Alternative option handles multiple mood options)
+    advice = "Whatever you feel, remember that today is a brand new day! Keep smiling! ✨"
+
+# Step 4: Current date and time ber kora
+current_time = datetime.datetime.now()
+# Date ta ke pariskar kore dekhator jonno format kora (e.g., 2026-06-07 15:30)
+formatted_time = current_time.strftime("%Y-%m-%d %H:%M")
+
+# Step 5: Final Report Display kora
+print(f"Date & Time: {formatted_time}")
+print(f"Hello {name}!")
+print(f"Your Mood today: {mood.capitalize()}")
+print(f"Your Energy Level: {energy_level.capitalize()}")
+print()
+print(f"Daily Advice: {advice}")
+print("----------------------------------------")
