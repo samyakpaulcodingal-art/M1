@@ -1,0 +1,65 @@
+import turtle
+
+# Step 1: Screen set up kora ebong background color dewa
+screen = turtle.Screen()
+screen.bgcolor("lightcyan") # Background color-ti light blue/cyan hobe
+screen.title("Fun with Shapes")
+
+# Katchhim (Turtle) toiri kora
+t = turtle.Turtle()
+t.shape("turtle") # Dekhte jeno sotti katchhim-er moto laage
+t.speed(3)        # Drawing-er speed (medium)
+t.pensize(3)      # Pencil-er thikness
+
+# ==========================================
+# 1. EQUILATERAL TRIANGLE (Somobahu Tribhuj)
+# ==========================================
+t.penup()
+t.goto(-200, 0) # Left side-e newa holo chobi akar jonno
+t.pendown()
+
+t.color("darkblue", "orange") # Border darkblue, bhetor-ti orange filler hobe
+t.begin_fill()
+
+for _ in range(3):
+    t.forward(100)
+    t.left(120)      # Triangle-er bahirer angle 120 degree
+    
+t.end_fill()
+
+# ==========================================
+# 2. RECTANGLE (Ayatakshetra)
+# ==========================================
+t.penup()
+t.goto(-30, 0)  # Majhkhane newa holo
+t.pendown()
+
+t.color("darkgreen", "lightgreen") # Border darkgreen, bhetor-ti lightgreen
+t.begin_fill()
+
+for _ in range(2):
+    t.forward(120)   # Lomba dik (Length)
+    t.left(90)
+    t.forward(70)    # Chwora dik (Width)
+    t.left(90)
+    
+t.end_fill()
+
+# ==========================================
+# 3. HEXAGON (Shorobhuj - 6ti bahu)
+# ==========================================
+t.penup()
+t.goto(150, 0)  # Right side-e newa holo
+t.pendown()
+
+t.color("purple", "pink") # Border purple, bhetor-ti pink
+t.begin_fill()
+
+for _ in range(6):
+    t.forward(60)    # Protita bahur mapi 60
+    t.left(60)       # Hexagon-er jonno turning angle 60 degree
+    
+t.end_fill()
+
+# Screen-ti dhore rakhar jonno (click korle bondho hobe)
+screen.exitonclick()
